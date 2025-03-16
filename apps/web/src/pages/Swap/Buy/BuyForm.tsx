@@ -125,7 +125,7 @@ function BuyFormInner({ disabled, initialCurrency }: BuyFormProps) {
     const supportedNativeToken = supportedTokens?.find((meldToken) => {
       return meldToken.currencyInfo?.currency.chainId === account.chainId && meldToken.currencyInfo?.currency.isNative
     })
-    if (account.chainId !== UniverseChainId.Mainnet && supportedNativeToken) {
+    if (account.chainId !== UniverseChainId.Zanjir && supportedNativeToken) {
       setBuyFormState((state) => ({
         ...state,
         quoteCurrency: supportedNativeToken,

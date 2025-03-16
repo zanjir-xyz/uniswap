@@ -1042,7 +1042,7 @@ describe('getV3PriceRangeInfo', () => {
 })
 
 describe('getCurrencyWithWrap', () => {
-  const nativeCurrency = nativeOnChain(UniverseChainId.Mainnet)
+  const nativeCurrency = nativeOnChain(UniverseChainId.Zanjir)
 
   it('returns undefined when currency is undefined', () => {
     expect(getCurrencyWithWrap(undefined, ProtocolVersion.V2)).toBeUndefined()
@@ -1066,7 +1066,7 @@ describe('getCurrencyWithWrap', () => {
 })
 
 describe('getCurrencyAddressWithWrap', () => {
-  const nativeCurrency = nativeOnChain(UniverseChainId.Mainnet)
+  const nativeCurrency = nativeOnChain(UniverseChainId.Zanjir)
 
   it('returns undefined when currency is undefined', () => {
     expect(getCurrencyAddressWithWrap(undefined, ProtocolVersion.V2)).toBeUndefined()
@@ -1090,7 +1090,7 @@ describe('getCurrencyAddressWithWrap', () => {
 })
 
 describe('getCurrencyForProtocol', () => {
-  const nativeCurrency = nativeOnChain(UniverseChainId.Mainnet)
+  const nativeCurrency = nativeOnChain(UniverseChainId.Zanjir)
 
   it('returns undefined when currency is undefined', () => {
     expect(getCurrencyForProtocol(undefined, ProtocolVersion.V2)).toBeUndefined()
@@ -1145,7 +1145,7 @@ describe('getCurrencyWithOptionalUnwrap', () => {
   it('never unwraps when shouldUnwrap is false', () => {
     expect(getCurrencyWithOptionalUnwrap({ currency: DAI, shouldUnwrap: true })).toBe(DAI)
     expect(getCurrencyWithOptionalUnwrap({ currency: WETH, shouldUnwrap: true })).toBe(
-      nativeOnChain(UniverseChainId.Mainnet),
+      nativeOnChain(UniverseChainId.Zanjir),
     )
     expect(getCurrencyWithOptionalUnwrap({ currency: ETH, shouldUnwrap: true })).toBe(ETH)
   })

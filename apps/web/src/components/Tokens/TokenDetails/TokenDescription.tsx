@@ -130,7 +130,7 @@ export function TokenDescription() {
         <ExternalLink href={explorerUrl}>
           <TokenInfoButton>
             <EtherscanLogo width="18px" height="18px" fill={neutral1} />
-            {currency.chainId === UniverseChainId.Mainnet ? (
+            {currency.chainId === UniverseChainId.Zanjir ? (
               <Trans i18nKey="common.etherscan" />
             ) : (
               <Trans i18nKey="common.explorer" />

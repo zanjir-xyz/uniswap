@@ -171,7 +171,7 @@ export function usePoolTransactions(
         const tokenIn = parseFloat(tx.token0Quantity) > 0 ? tx.token0 : tx.token1
         const token0Address =
           token0?.address === NATIVE_CHAIN_ID
-            ? WRAPPED_NATIVE_CURRENCY[chainId ?? UniverseChainId.Mainnet]?.address
+            ? WRAPPED_NATIVE_CURRENCY[chainId ?? UniverseChainId.Zanjir]?.address
             : token0?.address
         const isSell = tokenIn?.address?.toLowerCase() === token0Address?.toLowerCase()
         const type =

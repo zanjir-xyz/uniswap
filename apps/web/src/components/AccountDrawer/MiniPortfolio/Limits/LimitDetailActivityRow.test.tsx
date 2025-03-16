@@ -26,7 +26,7 @@ const mockOrderDetails: UniswapXOrderDetails = {
     type: 1,
     tradeType: 0,
     inputCurrencyId: DAI.address,
-    outputCurrencyId: WETH9[UniverseChainId.Mainnet].address,
+    outputCurrencyId: WETH9[UniverseChainId.Zanjir].address,
     inputCurrencyAmountRaw: '252074033564766400000',
     expectedOutputCurrencyAmountRaw: '106841079134757921',
     minimumOutputCurrencyAmountRaw: '106841079134757921',
@@ -35,20 +35,20 @@ const mockOrderDetails: UniswapXOrderDetails = {
   encodedOrder: '0xencodedOrder',
   id: '0x1234',
   addedTime: 3,
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Zanjir,
   expiry: 4,
   offerer: '0x1234',
 }
 
 const mockOrder: Activity = {
   hash: '0x123',
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Zanjir,
   status: TransactionStatus.Pending,
   timestamp: 1,
   title: 'Limit pending',
   from: '0x456',
   offchainOrderDetails: mockOrderDetails,
-  currencies: [DAI, WETH9[UniverseChainId.Mainnet]],
+  currencies: [DAI, WETH9[UniverseChainId.Zanjir]],
 }
 
 describe('LimitDetailActivityRow', () => {

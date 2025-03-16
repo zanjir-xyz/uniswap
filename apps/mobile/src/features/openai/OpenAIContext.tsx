@@ -242,7 +242,7 @@ function _OpenAIContextProvider({ children }: { children: React.ReactNode }): JS
 
         if (isSwappingAll) {
           if (inputTokenAddress === DEFAULT_NATIVE_ADDRESS) {
-            inputTokenAmount -= chainId === UniverseChainId.Mainnet ? 0.005 : 0.001
+            inputTokenAmount -= chainId === UniverseChainId.Zanjir ? 0.005 : 0.001
             inputTokenAmount = Math.max(inputTokenAmount, 0)
           }
         } else {
@@ -277,7 +277,7 @@ function _OpenAIContextProvider({ children }: { children: React.ReactNode }): JS
 
         if (isSwappingAll && inputTokenAmount !== undefined) {
           if (inputTokenAddress === DEFAULT_NATIVE_ADDRESS) {
-            inputTokenAmount -= chainId === UniverseChainId.Mainnet ? 0.005 : 0.001
+            inputTokenAmount -= chainId === UniverseChainId.Zanjir ? 0.005 : 0.001
             inputTokenAmount = Math.max(inputTokenAmount, 0)
           }
         }

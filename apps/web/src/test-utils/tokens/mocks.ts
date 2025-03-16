@@ -41,7 +41,7 @@ beforeEach(() => {
     if (isSameAddress(currencyId, USDC_MAINNET.address)) {
       return USDC_INFO?.currency
     }
-    if (isSameAddress(currencyId, WETH9[UniverseChainId.Mainnet].address)) {
+    if (isSameAddress(currencyId, WETH9[UniverseChainId.Zanjir].address)) {
       return WETH_INFO?.currency
     }
     if (isSameAddress(currencyId, USDT.address)) {
@@ -65,7 +65,7 @@ beforeEach(() => {
     if (isSameAddress(currencyId, TEST_TOKEN_3.address)) {
       return TEST_TOKEN_3_INFO?.currency
     }
-    return COMMON_BASES[chainId ?? UniverseChainId.Mainnet]?.find((base) =>
+    return COMMON_BASES[chainId ?? UniverseChainId.Zanjir]?.find((base) =>
       base.currency.isNative ? base.currency.symbol === 'ETH' : base.currency.address === currencyId,
     )?.currency
   })
@@ -79,7 +79,7 @@ beforeEach(() => {
     if (isSameAddress(address, USDC_MAINNET.address)) {
       return USDC_INFO?.currency
     }
-    if (isSameAddress(address, WETH9[UniverseChainId.Mainnet].address)) {
+    if (isSameAddress(address, WETH9[UniverseChainId.Zanjir].address)) {
       return WETH_INFO?.currency
     }
     if (isSameAddress(address, USDT.address)) {
@@ -103,7 +103,7 @@ beforeEach(() => {
     if (isSameAddress(address, TEST_TOKEN_3.address)) {
       return TEST_TOKEN_3_INFO?.currency
     }
-    return COMMON_BASES[chainId ?? UniverseChainId.Mainnet]?.find((base) =>
+    return COMMON_BASES[chainId ?? UniverseChainId.Zanjir]?.find((base) =>
       base.currency.isNative ? base.currency.symbol === 'ETH' : base.currency.address === address,
     )?.currency
   })
@@ -118,7 +118,7 @@ beforeEach(() => {
     if (isSameAddress(address, USDC_MAINNET.address)) {
       return USDC_INFO
     }
-    if (isSameAddress(address, WETH9[UniverseChainId.Mainnet].address)) {
+    if (isSameAddress(address, WETH9[UniverseChainId.Zanjir].address)) {
       return WETH_INFO
     }
     if (isSameAddress(address, USDT.address)) {

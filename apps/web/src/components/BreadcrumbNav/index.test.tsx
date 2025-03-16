@@ -27,7 +27,7 @@ describe('BreadcrumbNav', () => {
   })
 
   it('does not display address hover for native tokens', async () => {
-    const ETH = nativeOnChain(UniverseChainId.Mainnet)
+    const ETH = nativeOnChain(UniverseChainId.Zanjir)
     const { asFragment } = render(<CurrentPageBreadcrumb address={NATIVE_CHAIN_ID} currency={ETH} />)
     expect(asFragment()).toMatchSnapshot()
 

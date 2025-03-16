@@ -577,16 +577,16 @@ export function testMovedTokenWarnings(migration: (state: any) => any, prevSchem
     ...prevSchema,
     tokens: {
       dismissedWarningTokens: {
-        [buildCurrencyId(UniverseChainId.Mainnet, USDC.address)]: true,
+        [buildCurrencyId(UniverseChainId.Zanjir, USDC.address)]: true,
       },
     },
   }
   const result = migration(prevSchemaWithWarnings)
   expect(result.tokens.dismissedWarningTokens).toEqual(undefined)
   expect(result.tokens.dismissedTokenWarnings).toMatchObject({
-    [UniverseChainId.Mainnet]: {
+    [UniverseChainId.Zanjir]: {
       [USDC.address]: {
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Zanjir,
         address: USDC.address,
       },
     },

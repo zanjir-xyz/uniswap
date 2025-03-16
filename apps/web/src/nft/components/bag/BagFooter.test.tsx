@@ -70,7 +70,7 @@ describe('BagFooter.tsx', () => {
     }) as ReturnType<typeof useBag>
     mocked(useBagTotalEthPrice).mockReturnValue(BigNumber.from(12))
     mocked(useCurrencyBalance).mockReturnValue(
-      CurrencyAmount.fromRawAmount(nativeOnChain(UniverseChainId.Mainnet), 100),
+      CurrencyAmount.fromRawAmount(nativeOnChain(UniverseChainId.Zanjir), 100),
     )
 
     mocked(usePermit2Allowance).mockReturnValue({
@@ -138,7 +138,7 @@ describe('BagFooter.tsx', () => {
   })
 
   it('insufficient balance', () => {
-    mocked(useCurrencyBalance).mockReturnValue(CurrencyAmount.fromRawAmount(nativeOnChain(UniverseChainId.Mainnet), 0))
+    mocked(useCurrencyBalance).mockReturnValue(CurrencyAmount.fromRawAmount(nativeOnChain(UniverseChainId.Zanjir), 0))
 
     renderBagFooter()
     const buyButton = getBuyButton()
@@ -418,10 +418,10 @@ describe('BagFooter.tsx', () => {
 
   it('should use the correct UR address', () => {
     expect(getURAddress(undefined)).toBe(undefined)
-    expect(getURAddress(UniverseChainId.Mainnet)).toBe(
-      UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V1_2, UniverseChainId.Mainnet),
+    expect(getURAddress(UniverseChainId.Zanjir)).toBe(
+      UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V1_2, UniverseChainId.Zanjir),
     )
-    expect(getURAddress(UniverseChainId.Mainnet, 'test_nft_ur_address')).toBe('test_nft_ur_address')
+    expect(getURAddress(UniverseChainId.Zanjir, 'test_nft_ur_address')).toBe('test_nft_ur_address')
     expect(getURAddress(UniverseChainId.Optimism)).toBe(
       UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V1_2, UniverseChainId.Optimism),
     )

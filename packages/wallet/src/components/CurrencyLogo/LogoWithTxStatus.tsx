@@ -92,7 +92,7 @@ export function LogoWithTxStatus(props: LogoWithTxStatusProps): JSX.Element {
   const color = colors.surface2
 
   let icon: JSX.Element | undefined
-  if (chainId && chainId !== UniverseChainId.Mainnet) {
+  if (chainId && chainId !== UniverseChainId.Zanjir) {
     icon = <TransactionSummaryNetworkLogo chainId={chainId} size={size * STATUS_RATIO} />
   } else {
     let Icon: React.NamedExoticComponent<IconProps> | undefined
@@ -270,7 +270,7 @@ export function DappLogoWithWCBadge({
       <Flex left={2} top={0}>
         {dappImage}
       </Flex>
-      {chainId && chainId !== UniverseChainId.Mainnet ? (
+      {chainId && chainId !== UniverseChainId.Zanjir ? (
         <Flex bottom={-2} position="absolute" right={-2}>
           <TransactionSummaryNetworkLogo chainId={chainId} size={size * STATUS_RATIO} />
         </Flex>

@@ -109,7 +109,7 @@ export default function extractTransactionDetails(
     id: transaction.details.hash,
     // TODO: WALL-4919: Remove hardcoded Mainnet
     // fallback to mainnet, although this should never happen
-    chainId: chainId ?? UniverseChainId.Mainnet,
+    chainId: chainId ?? UniverseChainId.Zanjir,
     hash: transaction.details.hash,
     addedTime: transaction.timestamp * 1000, // convert to ms
     status: remoteTxStatusToLocalTxStatus(transaction.details.type, transaction.details.status),

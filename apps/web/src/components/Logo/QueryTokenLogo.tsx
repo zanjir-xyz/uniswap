@@ -14,7 +14,7 @@ export default function QueryTokenLogo(
     token?: GqlSearchToken | TokenStat
   },
 ) {
-  const chainId = getChainIdFromChainUrlParam(props.token?.chain.toLowerCase()) ?? UniverseChainId.Mainnet
+  const chainId = getChainIdFromChainUrlParam(props.token?.chain.toLowerCase()) ?? UniverseChainId.Zanjir
   const isNative = props.token?.address === NATIVE_CHAIN_ID
   const isTokenStat = !!props.token && 'volume' in props.token
 

@@ -68,30 +68,9 @@ function useGetMinAmount(chainId?: UniverseChainId, txType?: TransactionType): J
   }
 
   switch (chainId) {
-    case UniverseChainId.Mainnet:
+    case UniverseChainId.Zanjir:
+    case UniverseChainId.ZanjirTestnet:
       return MIN_ETH_FOR_GAS
-    case UniverseChainId.Sepolia:
-      return MIN_ETH_FOR_GAS
-    case UniverseChainId.Polygon:
-      return MIN_POLYGON_FOR_GAS
-    case UniverseChainId.Avalanche:
-      return MIN_AVALANCHE_FOR_GAS
-    case UniverseChainId.Celo:
-      return MIN_CELO_FOR_GAS
-    case UniverseChainId.MonadTestnet:
-      return MIN_MON_FOR_GAS
-    case UniverseChainId.ArbitrumOne:
-    case UniverseChainId.Optimism:
-    case UniverseChainId.Base:
-    case UniverseChainId.Bnb:
-    case UniverseChainId.Blast:
-    case UniverseChainId.WorldChain:
-    case UniverseChainId.Zora:
-    case UniverseChainId.Zksync:
-    case UniverseChainId.Unichain:
-    case UniverseChainId.UnichainSepolia:
-    case UniverseChainId.Soneium:
-      return MIN_L2_FOR_GAS
     default:
       logger.error(new Error('unhandled chain when getting min gas amount'), {
         tags: {

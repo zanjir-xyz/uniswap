@@ -40,7 +40,7 @@ describe(LogoWithTxStatus, () => {
         {...currencyLogoProps({
           currencyInfo: ETH_CURRENCY_INFO,
           txStatus: TransactionStatus.Pending,
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Zanjir,
         })}
       />,
     )
@@ -84,7 +84,7 @@ describe(LogoWithTxStatus, () => {
 
       it('does not show network logo if chainId is Mainnet', () => {
         const { queryByTestId } = render(
-          <LogoWithTxStatus {...currencyLogoProps({ chainId: UniverseChainId.Mainnet })} />,
+          <LogoWithTxStatus {...currencyLogoProps({ chainId: UniverseChainId.Zanjir })} />,
         )
 
         expect(queryByTestId('network-logo')).toBeFalsy()
@@ -115,7 +115,7 @@ describe(LogoWithTxStatus, () => {
       for (const txType of transactionWithIcons) {
         it(`shows icon for ${txType}`, () => {
           const { queryByTestId } = render(
-            <LogoWithTxStatus {...currencyLogoProps({ chainId: UniverseChainId.Mainnet })} txType={txType} />,
+            <LogoWithTxStatus {...currencyLogoProps({ chainId: UniverseChainId.Zanjir })} txType={txType} />,
           )
 
           expect(queryByTestId('status-icon')).toBeTruthy()
@@ -126,7 +126,7 @@ describe(LogoWithTxStatus, () => {
         it(`shows icon for NFTTrade if asset type ${assetType}`, () => {
           const { queryByTestId } = render(
             <LogoWithTxStatus
-              {...currencyLogoProps({ chainId: UniverseChainId.Mainnet })}
+              {...currencyLogoProps({ chainId: UniverseChainId.Zanjir })}
               assetType={assetType}
               txType={TransactionType.NFTTrade}
             />,
@@ -142,7 +142,7 @@ describe(LogoWithTxStatus, () => {
           jest.spyOn(console, 'warn').mockImplementation(consoleWarnMock)
 
           const { queryByTestId } = render(
-            <LogoWithTxStatus {...currencyLogoProps({ chainId: UniverseChainId.Mainnet })} txType={txType} />,
+            <LogoWithTxStatus {...currencyLogoProps({ chainId: UniverseChainId.Zanjir })} txType={txType} />,
           )
 
           expect(queryByTestId('status-icon')).toBeFalsy()
@@ -161,7 +161,7 @@ describe(LogoWithTxStatus, () => {
 
           const { queryByTestId } = render(
             <LogoWithTxStatus
-              {...currencyLogoProps({ chainId: UniverseChainId.Mainnet })}
+              {...currencyLogoProps({ chainId: UniverseChainId.Zanjir })}
               assetType={assetType}
               txType={TransactionType.NFTTrade}
             />,
@@ -294,7 +294,7 @@ describe(DappLogoWithWCBadge, () => {
     })
 
     it('renders wallet connect logo if chain is Mainnet', () => {
-      const { queryByTestId } = render(<DappLogoWithWCBadge {...props} chainId={UniverseChainId.Mainnet} />)
+      const { queryByTestId } = render(<DappLogoWithWCBadge {...props} chainId={UniverseChainId.Zanjir} />)
 
       expect(queryByTestId('network-logo')).toBeFalsy()
       expect(queryByTestId('wallet-connect-logo')).toBeTruthy()

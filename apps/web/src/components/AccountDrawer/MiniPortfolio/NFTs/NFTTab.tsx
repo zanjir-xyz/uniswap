@@ -24,80 +24,9 @@ const StyledTabButton = styled(TabButton)`
 `
 
 export default function NFTs({ account }: { account: string }) {
-  const { t } = useTranslation()
-  const accountDrawer = useAccountDrawer()
-  const navigate = useNavigate()
-  const setSellPageState = useProfilePageState((state) => state.setProfilePageState)
-  const resetSellAssets = useSellAsset((state) => state.reset)
-  const clearCollectionFilters = useWalletCollections((state) => state.clearCollectionFilters)
-  const { gqlChains, isTestnetModeEnabled } = useEnabledChains()
-
-  const isL2NFTsEnabled = useFeatureFlag(FeatureFlags.L2NFTs)
-  const { walletAssets, loading, hasNext, loadMore } = useNftBalance({
-    ownerAddress: account,
-    first: DEFAULT_NFT_QUERY_AMOUNT,
-    skip: !accountDrawer.isOpen,
-    chains: isTestnetModeEnabled ? gqlChains : isL2NFTsEnabled ? [Chain.Ethereum, Chain.Zora] : undefined,
-  })
-
-  const [currentTokenPlayingMedia, setCurrentTokenPlayingMedia] = useState<string | undefined>()
-
-  const navigateToProfile = useCallback(() => {
-    accountDrawer.close()
-    resetSellAssets()
-    setSellPageState(ProfilePageStateType.VIEWING)
-    clearCollectionFilters()
-    navigate('/nfts/profile')
-  }, [clearCollectionFilters, navigate, resetSellAssets, setSellPageState, accountDrawer])
-
-  if (loading && !walletAssets) {
-    return (
-      <AssetsContainer>
-        <LoadingAssets count={2} />
-      </AssetsContainer>
-    )
-  }
-
-  if (!walletAssets || walletAssets?.length === 0) {
-    return <EmptyWalletModule onNavigateClick={accountDrawer.close} />
-  }
 
   return (
     <>
-      <StyledTabButton
-        text={t('nfts.viewAndSell')}
-        icon={<Gallery color="$neutral2" size="$icon.20" />}
-        onClick={navigateToProfile}
-      />
-      <InfiniteScroll
-        next={loadMore}
-        hasMore={hasNext ?? false}
-        loader={
-          Boolean(hasNext && walletAssets?.length) && (
-            <AssetsContainer>
-              <LoadingAssets count={2} />
-            </AssetsContainer>
-          )
-        }
-        dataLength={walletAssets?.length ?? 0}
-        style={{ overflow: 'unset' }}
-        scrollableTarget="wallet-dropdown-scroll-wrapper"
-      >
-        <AssetsContainer>
-          {walletAssets?.length
-            ? walletAssets.map((asset, index) => {
-                return (
-                  <NFT
-                    setCurrentTokenPlayingMedia={setCurrentTokenPlayingMedia}
-                    mediaShouldBePlaying={currentTokenPlayingMedia === asset.tokenId}
-                    key={index}
-                    asset={asset}
-                  />
-                )
-              })
-            : null}
-        </AssetsContainer>
-      </InfiniteScroll>
     </>
   )
 }

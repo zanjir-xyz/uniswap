@@ -127,7 +127,7 @@ describe('Combined contexts', () => {
       <SwapAndLimitContext.Provider
         value={{
           currencyState: {
-            inputCurrency: nativeOnChain(UniverseChainId.Mainnet),
+            inputCurrency: nativeOnChain(UniverseChainId.Zanjir),
             outputCurrency: undefined,
           },
           prefilledState: {
@@ -147,7 +147,7 @@ describe('Combined contexts', () => {
 
     // @ts-ignore rendering TestComponent sets derivedSwapInfo value
     expect(derivedSwapInfo?.currencies).toEqual({
-      [CurrencyField.INPUT]: nativeOnChain(UniverseChainId.Mainnet),
+      [CurrencyField.INPUT]: nativeOnChain(UniverseChainId.Zanjir),
       [CurrencyField.OUTPUT]: undefined,
     })
   })

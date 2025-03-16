@@ -22,13 +22,13 @@ describe('Settings Tab', () => {
   describe('showRoutingSettings', () => {
     beforeEach(() => {
       mocked(useAccount).mockReturnValue({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Zanjir,
       } as unknown as ReturnType<typeof useAccount>)
       mocked(useEnabledChains).mockReturnValue({
         isTestnetModeEnabled: false,
         chains: [],
         gqlChains: [],
-        defaultChainId: UniverseChainId.Mainnet,
+        defaultChainId: UniverseChainId.Zanjir,
       })
       mocked(useIsSupportedChainId).mockReturnValue(true)
     })

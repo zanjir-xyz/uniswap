@@ -38,7 +38,7 @@ function useQuickRouteArguments({
     if (!tokenIn || !tokenOut || !amount) {
       return skipToken
     }
-    if (!enabledMainnet || tokenIn.chainId !== UniverseChainId.Mainnet || !allRoutesEnabled) {
+    if (!enabledMainnet || tokenIn.chainId !== UniverseChainId.Zanjir || !allRoutesEnabled) {
       return skipToken
     }
 

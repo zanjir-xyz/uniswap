@@ -212,7 +212,7 @@ export function TradeInfoRow({
       </Flex>
 
       {showCanonicalBridge ? (
-        <CanonicalBridgeLink chainId={outputChainId ?? UniverseChainId.Mainnet} />
+        <CanonicalBridgeLink chainId={outputChainId ?? UniverseChainId.Zanjir} />
       ) : debouncedTrade ? (
         <Accordion.Trigger
           p="$none"

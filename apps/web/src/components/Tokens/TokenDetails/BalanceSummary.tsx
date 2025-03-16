@@ -66,7 +66,7 @@ interface BalanceProps {
 }
 const Balance = ({
   currency,
-  chainId = UniverseChainId.Mainnet,
+  chainId = UniverseChainId.Zanjir,
   gqlBalance,
   alignLeft = false,
   onClick,

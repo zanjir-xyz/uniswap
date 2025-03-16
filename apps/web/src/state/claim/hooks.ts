@@ -169,8 +169,8 @@ export function useUserHasAvailableClaim(account: string | null | undefined): bo
   const userClaimData = useUserClaimData(account)
 
   const { data: isClaimed, isLoading: isClaimedLoading } = useReadContract({
-    address: assume0xAddress(MERKLE_DISTRIBUTOR_ADDRESS[UniverseChainId.Mainnet]),
-    chainId: UniverseChainId.Mainnet,
+    address: assume0xAddress(MERKLE_DISTRIBUTOR_ADDRESS[UniverseChainId.Zanjir]),
+    chainId: UniverseChainId.Zanjir,
     abi: claimAbi,
     functionName: 'isClaimed',
     args: userClaimData ? [BigInt(userClaimData.index)] : undefined,

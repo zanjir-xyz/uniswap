@@ -39,7 +39,7 @@ type BuildCurrencyParams = {
 export function currencyIdToContractInput(id: CurrencyId): ContractInput {
   return {
     // TODO: WALL-4919: Remove hardcoded Mainnet
-    chain: toGraphQLChain(currencyIdToChain(id) ?? UniverseChainId.Mainnet) ?? Chain.Ethereum,
+    chain: toGraphQLChain(currencyIdToChain(id) ?? UniverseChainId.Zanjir) ?? Chain.Ethereum,
     address: currencyIdToGraphQLAddress(id) ?? undefined,
   }
 }

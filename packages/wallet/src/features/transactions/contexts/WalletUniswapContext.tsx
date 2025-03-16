@@ -47,7 +47,7 @@ export function WalletUniswapProvider({ children }: PropsWithChildren): JSX.Elem
       const initialState = prepareSwapFormState({
         inputCurrencyId,
         outputCurrencyId,
-        defaultChainId: UniverseChainId.Mainnet,
+        defaultChainId: UniverseChainId.Zanjir,
       })
       navigateToSwapFlow({ initialState })
     },

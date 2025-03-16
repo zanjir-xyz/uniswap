@@ -448,7 +448,7 @@ export const MockRemoveLiquidity = {
   ...mockAssetActivityPartsFragment,
   details: {
     ...commonTransactionDetailsFields,
-    to: NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[UniverseChainId.Mainnet],
+    to: NONFUNGIBLE_POSITION_MANAGER_ADDRESSES[UniverseChainId.Zanjir],
     type: TransactionType.Receive,
     assetChanges: [
       mockTokenTransferInPartsFragment,

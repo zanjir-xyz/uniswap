@@ -70,7 +70,7 @@ export function PoolDetailsTransactionsTable({
   token1?: Token
   protocolVersion?: ProtocolVersion
 }) {
-  const chainId = useChainIdFromUrlParam() ?? UniverseChainId.Mainnet
+  const chainId = useChainIdFromUrlParam() ?? UniverseChainId.Zanjir
   const activeLocalCurrency = useAppFiatCurrency()
   const { formatNumber, formatFiatPrice } = useFormatter()
   const [filterModalIsOpen, toggleFilterModal] = useReducer((s) => !s, false)

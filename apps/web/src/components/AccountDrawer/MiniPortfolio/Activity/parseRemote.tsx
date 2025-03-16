@@ -66,13 +66,10 @@ const UNI_IMG =
 const ENS_IMG =
   'https://464911102-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/collections%2F2TjMAeHSzwlQgcOdL48E%2Ficon%2FKWP0gk2C6bdRPliWIA6o%2Fens%20transparent%20background.png?alt=media&token=bd28b063-5a75-4971-890c-97becea09076'
 
+
+console.log(UNI_ADDRESSES)
+
 const COMMON_CONTRACTS: { [key: string]: Partial<Activity> | undefined } = {
-  [UNI_ADDRESSES[UniverseChainId.Mainnet].toLowerCase()]: {
-    title: i18n.t('common.uniGovernance'),
-    descriptor: i18n.t('common.contractInteraction'),
-    logos: [UNI_IMG],
-  },
-  // TODO(cartcrom): Add permit2-specific logo
   '0x000000000022d473030f116ddee9f6b43ac78ba3': {
     title: i18n.t('common.permit2'),
     descriptor: i18n.t('common.uniswapProtocol'),
@@ -123,11 +120,6 @@ function callsV3PositionManagerContract(assetActivity: TransactionActivity) {
 function callsV4PositionManagerContract(assetActivity: TransactionActivity) {
   const supportedChain = supportedChainIdFromGQLChain(assetActivity.chain)
   if (!supportedChain) {
-    return false
-  }
-
-  // monad testnet does not have v4 support
-  if (supportedChain === UniverseChainId.MonadTestnet) {
     return false
   }
 

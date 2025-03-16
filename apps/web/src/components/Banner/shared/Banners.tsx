@@ -24,7 +24,7 @@ export function Banners() {
   // Calculate the chainId for the current page's contextual chain (e.g. /tokens/ethereum or /tokens/arbitrum), if it exists.
   const pageChainId = useMemo(() => {
     const chainUrlParam = pathname.split('/').find(isChainUrlParam)
-    return chainUrlParam ? getChainIdFromChainUrlParam(chainUrlParam) : UniverseChainId.Mainnet
+    return chainUrlParam ? getChainIdFromChainUrlParam(chainUrlParam) : UniverseChainId.Zanjir
   }, [pathname])
   const currentPageHasManualOutage = manualOutage?.chainId === pageChainId
 

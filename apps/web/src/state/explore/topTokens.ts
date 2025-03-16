@@ -137,7 +137,7 @@ export function useTopTokens() {
         if (!cur?.address) {
           return acc
         }
-        const currCurrencyId = buildCurrencyId(fromGraphQLChain(cur.chain) ?? UniverseChainId.Mainnet, cur.address)
+        const currCurrencyId = buildCurrencyId(fromGraphQLChain(cur.chain) ?? UniverseChainId.Zanjir, cur.address)
         return {
           ...acc,
           [currCurrencyId]: i + 1,

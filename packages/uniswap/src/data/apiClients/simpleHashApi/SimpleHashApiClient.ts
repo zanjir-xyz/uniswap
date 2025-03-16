@@ -24,7 +24,7 @@ export type ReportSpamRequest = {
 }
 
 const SIMPLE_HASH_CHAIN_IDS: Record<UniverseChainId, string> = {
-  [UniverseChainId.Mainnet]: 'ethereum',
+  [UniverseChainId.Zanjir]: 'ethereum',
   [UniverseChainId.ArbitrumOne]: 'arbitrum',
   [UniverseChainId.Avalanche]: 'avalanche',
   [UniverseChainId.Base]: 'base',

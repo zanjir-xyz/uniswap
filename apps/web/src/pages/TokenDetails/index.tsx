@@ -44,7 +44,7 @@ function useTDPCurrency(
   isNative: boolean,
 ) {
   const { chainId } = useAccount()
-  const appChainId = chainId ?? UniverseChainId.Mainnet
+  const appChainId = chainId ?? UniverseChainId.Zanjir
 
   const queryCurrency = useMemo(() => {
     if (isNative) {
@@ -95,7 +95,7 @@ function useCreateTDPContext(): PendingTDPContext | LoadedTDPContext {
     throw new Error('Invalid token details route: token address URL param is undefined')
   }
 
-  const currencyChainInfo = getChainInfo(useChainIdFromUrlParam() ?? UniverseChainId.Mainnet)
+  const currencyChainInfo = getChainInfo(useChainIdFromUrlParam() ?? UniverseChainId.Zanjir)
 
   const isNative = tokenAddress === NATIVE_CHAIN_ID
 
@@ -156,7 +156,7 @@ function useCreateTDPContext(): PendingTDPContext | LoadedTDPContext {
 export default function TokenDetailsPage() {
   const { t } = useTranslation()
   const account = useAccount()
-  const pageChainId = account.chainId ?? UniverseChainId.Mainnet
+  const pageChainId = account.chainId ?? UniverseChainId.Zanjir
   const contextValue = useCreateTDPContext()
   const { tokenColor, address, currency, currencyChain, currencyChainId, tokenQuery } = contextValue
   const isSupportedChain = useIsSupportedChainId(currencyChainId)

@@ -64,7 +64,7 @@ export const TokenDetailsHeader = () => {
       {
         title: t('common.explorer'),
         icon:
-          currency.chainId === UniverseChainId.Mainnet ? (
+          currency.chainId === UniverseChainId.Zanjir ? (
             <EtherscanLogo width="18px" height="18px" fill={colors.neutral1.val} />
           ) : (
             <ExplorerIcon width="18px" height="18px" fill={colors.neutral1.val} />

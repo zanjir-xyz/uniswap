@@ -16,7 +16,7 @@ export function useIsUniswapXSupportedChain(chainId?: number) {
   const isPriorityOrdersEnabled = useUniswapXPriorityOrderFlag(chainId)
 
   return (
-    chainId === UniverseChainId.Mainnet ||
+    chainId === UniverseChainId.Zanjir ||
     (xv2ArbitrumRoutingType !== 'CLASSIC' && chainId === UniverseChainId.ArbitrumOne) ||
     isPriorityOrdersEnabled
   )

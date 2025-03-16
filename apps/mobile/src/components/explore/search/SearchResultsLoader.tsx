@@ -26,7 +26,7 @@ function SectionLoader({ searchHeader, repeat = 1 }: { searchHeader: SearchHeade
  */
 export function SearchResultsLoader({ selectedChain }: { selectedChain: UniverseChainId | null }): JSX.Element {
   // Only mainnet or "all" networks support nfts, hide loader otherwise
-  const hideNftLoading = selectedChain !== null && selectedChain !== UniverseChainId.Mainnet
+  const hideNftLoading = selectedChain !== null && selectedChain !== UniverseChainId.Zanjir
   return (
     <Flex gap="$spacing16">
       <SectionLoader searchHeader={TokenHeaderItem} repeat={2} />

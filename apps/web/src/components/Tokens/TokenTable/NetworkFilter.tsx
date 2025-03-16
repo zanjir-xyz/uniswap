@@ -86,7 +86,7 @@ export default function TableNetworkFilter({ showMultichainOption = true }: { sh
                 <NetworkLogo chainId={null} />
               ) : (
                 <ChainLogo
-                  chainId={currentChainId ?? UniverseChainId.Mainnet}
+                  chainId={currentChainId ?? UniverseChainId.Zanjir}
                   size={20}
                   testId="tokens-network-filter-selected"
                 />
@@ -171,7 +171,7 @@ const TableNetworkItem = memo(function TableNetworkItem({
           {isAllNetworks ? (
             <NetworkLogo chainId={null} />
           ) : (
-            <ChainLogo chainId={chainId ?? UniverseChainId.Mainnet} size={20} />
+            <ChainLogo chainId={chainId ?? UniverseChainId.Zanjir} size={20} />
           )}
           <ElementAfterText
             text={isAllNetworks ? t('transaction.network.all') : chainInfo.label}

@@ -52,7 +52,7 @@ export function getSortedPortfolioTokens(
         return undefined
       }
 
-      const tokenChainId = supportedChainIdFromGQLChain(tokenBalance.token?.chain) ?? UniverseChainId.Mainnet
+      const tokenChainId = supportedChainIdFromGQLChain(tokenBalance.token?.chain) ?? UniverseChainId.Zanjir
       if (tokenChainId !== chainId) {
         return undefined
       }

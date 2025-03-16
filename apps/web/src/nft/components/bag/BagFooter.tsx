@@ -300,7 +300,7 @@ export const BagFooter = ({ setModalIsOpen, eventProperties }: BagFooterProps) =
   const [tokenSelectorOpen, setTokenSelectorOpen] = useState(false)
   const isPending = PENDING_BAG_STATUSES.includes(bagStatus)
   const activeCurrency = inputCurrency ?? defaultCurrency
-  const usingPayWithAnyToken = !!inputCurrency && account.chainId === UniverseChainId.Mainnet
+  const usingPayWithAnyToken = !!inputCurrency && account.chainId === UniverseChainId.Zanjir
   const { universalRouterAddress, universalRouterAddressIsLoading } = useNftUniversalRouterAddress()
 
   useSubscribeTransactionState(setModalIsOpen)
@@ -332,7 +332,7 @@ export const BagFooter = ({ setModalIsOpen, eventProperties }: BagFooterProps) =
   const nativeCurencyBalance = useCurrencyBalance(account.address ?? undefined, nativeCurrency)
 
   const sufficientBalance = useMemo(() => {
-    if (!connected || account.chainId !== UniverseChainId.Mainnet) {
+    if (!connected || account.chainId !== UniverseChainId.Zanjir) {
       return undefined
     }
 
@@ -379,8 +379,8 @@ export const BagFooter = ({ setModalIsOpen, eventProperties }: BagFooterProps) =
     handleClick,
     buttonColor,
   } = useMemo((): BuyButtonStateData => {
-    if (connected && account.chainId !== UniverseChainId.Mainnet) {
-      const handleClick = () => switchChain(UniverseChainId.Mainnet)
+    if (connected && account.chainId !== UniverseChainId.Zanjir) {
+      const handleClick = () => switchChain(UniverseChainId.Zanjir)
       return getBuyButtonStateData(BuyButtonStates.NOT_SUPPORTED_CHAIN, theme, handleClick)
     }
 

@@ -165,7 +165,7 @@ export const AddressCell = ({ address, chainId }: AddressCellProps) => {
   return (
     <Flex $md={{ display: 'none' }} className={styles.addressCell}>
       <AddressLink
-        href={getExplorerLink(chainId ?? UniverseChainId.Mainnet, address ?? '', ExplorerDataType.ADDRESS)}
+        href={getExplorerLink(chainId ?? UniverseChainId.Zanjir, address ?? '', ExplorerDataType.ADDRESS)}
         style={{ textDecoration: 'none' }}
       >
         <Text variant="body2" onPress={(e) => e.stopPropagation()}>

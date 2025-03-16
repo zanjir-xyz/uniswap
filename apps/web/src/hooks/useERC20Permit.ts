@@ -7,7 +7,7 @@ import useIsArgentWallet from 'hooks/useIsArgentWallet'
 import JSBI from 'jsbi'
 import { useMemo, useState } from 'react'
 import { EIP2612_ABI } from 'uniswap/src/abis/eip_2612'
-import { DAI, UNI, USDC_MAINNET } from 'uniswap/src/constants/tokens'
+import { UNI, USDC_ZANJIR } from 'uniswap/src/constants/tokens'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { assume0xAddress } from 'utils/wagmi'
 import { useReadContract } from 'wagmi'
@@ -33,13 +33,9 @@ const PERMITTABLE_TOKENS: {
     [checksummedTokenAddress: string]: PermitInfo
   }
 } = {
-  [UniverseChainId.Mainnet]: {
-    [USDC_MAINNET.address]: { type: PermitType.AMOUNT, name: 'USD Coin', version: '2' },
-    [DAI.address]: { type: PermitType.ALLOWED, name: 'Dai Stablecoin', version: '1' },
-    [UNI[UniverseChainId.Mainnet].address]: { type: PermitType.AMOUNT, name: 'Uniswap' },
+  [UniverseChainId.Zanjir]: {
   },
-  [UniverseChainId.Sepolia]: {
-    [UNI[UniverseChainId.Sepolia].address]: { type: PermitType.AMOUNT, name: 'Uniswap' },
+  [UniverseChainId.ZanjirTestnet]: {
   },
 }
 
@@ -184,31 +180,31 @@ export function useERC20Permit(
 
         const message = allowed
           ? {
-              holder: account.address,
-              spender,
-              allowed,
-              nonce: nonceNumber,
-              expiry: signatureDeadline,
-            }
+            holder: account.address,
+            spender,
+            allowed,
+            nonce: nonceNumber,
+            expiry: signatureDeadline,
+          }
           : {
-              owner: account.address,
-              spender,
-              value,
-              nonce: nonceNumber,
-              deadline: signatureDeadline,
-            }
+            owner: account.address,
+            spender,
+            value,
+            nonce: nonceNumber,
+            deadline: signatureDeadline,
+          }
         const domain = permitInfo.version
           ? {
-              name: permitInfo.name,
-              version: permitInfo.version,
-              verifyingContract: tokenAddress,
-              chainId: account.chainId,
-            }
+            name: permitInfo.name,
+            version: permitInfo.version,
+            verifyingContract: tokenAddress,
+            chainId: account.chainId,
+          }
           : {
-              name: permitInfo.name,
-              verifyingContract: tokenAddress,
-              chainId: account.chainId,
-            }
+            name: permitInfo.name,
+            verifyingContract: tokenAddress,
+            chainId: account.chainId,
+          }
         const data = JSON.stringify({
           types: {
             EIP712Domain: permitInfo.version ? EIP712_DOMAIN_TYPE : EIP712_DOMAIN_TYPE_NO_VERSION,

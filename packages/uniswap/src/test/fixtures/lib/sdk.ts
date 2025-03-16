@@ -3,18 +3,18 @@ import { getWrappedNativeAddress } from 'uniswap/src/constants/addresses'
 import { DEFAULT_NATIVE_ADDRESS } from 'uniswap/src/features/chains/chainInfo'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 
-export const ETH = new Token(UniverseChainId.Mainnet, DEFAULT_NATIVE_ADDRESS, 18, 'ETH', 'Ethereum')
+export const ETH = new Token(UniverseChainId.Zanjir, DEFAULT_NATIVE_ADDRESS, 18, 'ETH', 'Ethereum')
 
 export const WETH = new Token(
-  UniverseChainId.Mainnet,
-  getWrappedNativeAddress(UniverseChainId.Mainnet),
+  UniverseChainId.Zanjir,
+  getWrappedNativeAddress(UniverseChainId.Zanjir),
   18,
   'WETH',
   'Wrapped Ether',
 )
 
 export const DAI = new Token(
-  UniverseChainId.Mainnet,
+  UniverseChainId.Zanjir,
   '0x6b175474e89094c44da98b954eedeac495271d0f',
   18,
   'DAI',
@@ -30,7 +30,7 @@ export const DAI_ARBITRUM_ONE = new Token(
 )
 
 export const USDC = new Token(
-  UniverseChainId.Mainnet,
+  UniverseChainId.Zanjir,
   '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
   6,
   'USDC',
@@ -70,7 +70,7 @@ export const USDC_POLYGON = new Token(
 )
 
 export const USDT = new Token(
-  UniverseChainId.Mainnet,
+  UniverseChainId.Zanjir,
   '0xdac17f958d2ee523a2206206994597c13d831ec7',
   6,
   'USDT',
@@ -86,7 +86,7 @@ export const USDT_BNB = new Token(
 )
 
 export const WBTC = new Token(
-  UniverseChainId.Mainnet,
+  UniverseChainId.Zanjir,
   '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599',
   8,
   'WBTC',

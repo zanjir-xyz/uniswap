@@ -30,7 +30,7 @@ export function createEthersProvider(
         false,
       )
 
-      if (chainId === UniverseChainId.Mainnet && useFlashbots) {
+      if (chainId === UniverseChainId.Zanjir && useFlashbots) {
         const sendAuthenticationHeader = getDynamicConfigValue<
           DynamicConfigs.MainnetPrivateRpc,
           MainnetPrivateRpcConfigKey,

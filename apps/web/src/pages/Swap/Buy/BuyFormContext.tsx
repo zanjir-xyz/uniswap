@@ -60,7 +60,7 @@ type BuyFormContextType = {
   derivedBuyFormInfo: BuyInfo
 }
 
-export const ethCurrencyInfo = buildPartialCurrencyInfo(nativeOnChain(UniverseChainId.Mainnet))
+export const ethCurrencyInfo = buildPartialCurrencyInfo(nativeOnChain(UniverseChainId.Zanjir))
 const DEFAULT_BUY_FORM_STATE: BuyFormState = {
   inputAmount: '',
   quoteCurrency: undefined,

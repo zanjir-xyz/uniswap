@@ -67,7 +67,6 @@
     "eslint-plugin-react": "7.34.1",
     "eslint-plugin-jest": "27.9.0",
     "@uniswap/router-sdk": "2.0.2",
-    "@uniswap/sdk-core": "7.7.2",
     "@uniswap/v2-sdk": "4.15.2",
     "@vercel/og@0.5.8": "patch:@vercel/og@npm%3A0.5.8#./.yarn/patches/@vercel-og-npm-0.5.8-83a79f2744.patch",
     "@walletconnect/ethereum-provider": "2.17.1",

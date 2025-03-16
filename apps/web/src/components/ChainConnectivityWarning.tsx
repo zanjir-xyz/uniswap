@@ -96,7 +96,7 @@ export function ChainConnectivityWarning() {
         <CloseButton onClick={() => setHide(true)} />
       </Flex>
       <BodyRow>
-        {chainId === UniverseChainId.Mainnet ? (
+        {chainId === UniverseChainId.Zanjir ? (
           <Trans i18nKey="network.lostConnection" />
         ) : (
           <Trans i18nKey="network.mightBeDown" values={{ network: label }} />

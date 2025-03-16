@@ -273,7 +273,7 @@ const PoolDetailsHeaderActions = ({
         isOpen={contractsModalIsOpen}
         toggleOpen={toggleContractsModal}
         menuLabel={
-          chainId === UniverseChainId.Mainnet ? (
+          chainId === UniverseChainId.Zanjir ? (
             <EtherscanLogo width="18px" height="18px" fill={theme.neutral1} />
           ) : (
             <ExplorerIcon width="18px" height="18px" fill={theme.neutral1} />

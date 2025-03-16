@@ -5,7 +5,7 @@ import { isBackendSupportedChain } from 'uniswap/src/features/chains/utils'
 
 describe('fromGraphQLChain', () => {
   it('should return the corresponding chain ID for supported chains', () => {
-    expect(supportedChainIdFromGQLChain(Chain.Ethereum)).toBe(UniverseChainId.Mainnet)
+    expect(supportedChainIdFromGQLChain(Chain.Ethereum)).toBe(UniverseChainId.Zanjir)
 
     for (const chain of Object.values(Chain)) {
       if (!isBackendSupportedChain(chain)) {

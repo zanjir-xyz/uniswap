@@ -16,16 +16,16 @@ jest.mock('hooks/Tokens', () => ({
 describe('DoubleLogo', () => {
   const mockCurrency1: Token = {
     isToken: true,
-    chainId: UniverseChainId.Mainnet,
-    address: UNI[UniverseChainId.Mainnet].address,
-    symbol: UNI[UniverseChainId.Mainnet].symbol,
-    name: UNI[UniverseChainId.Mainnet].name,
-    decimals: UNI[UniverseChainId.Mainnet].decimals,
+    chainId: UniverseChainId.Zanjir,
+    address: UNI[UniverseChainId.Zanjir].address,
+    symbol: UNI[UniverseChainId.Zanjir].symbol,
+    name: UNI[UniverseChainId.Zanjir].name,
+    decimals: UNI[UniverseChainId.Zanjir].decimals,
   } as Token
 
   const mockCurrency2: Token = {
     isToken: true,
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Zanjir,
     address: WBTC.address,
     symbol: WBTC.symbol,
     name: WBTC.name,
@@ -43,7 +43,7 @@ describe('DoubleLogo', () => {
           currency: mockCurrency1,
           logoUrl:
             'https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984/logo.png',
-          currencyId: UNI[UniverseChainId.Mainnet].address,
+          currencyId: UNI[UniverseChainId.Zanjir].address,
           safetyInfo: getCurrencySafetyInfo(SafetyLevel.Verified, undefined),
         }
       }

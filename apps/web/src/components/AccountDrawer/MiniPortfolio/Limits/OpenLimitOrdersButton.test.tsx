@@ -12,7 +12,7 @@ jest.mock('components/AccountDrawer/MiniPortfolio/Activity/hooks', () => ({
 
 const mockLimitActivity = {
   hash: '0x123',
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Zanjir,
   status: TransactionStatus.Pending,
   timestamp: 1,
   title: 'Limit pending',

@@ -28,7 +28,7 @@ export function LiquidityPositionAmountsTile({
   const { formatCurrencyAmount, formatPercent } = useLocalizationContext()
   const totalFiatValue = fiatValue0?.add(fiatValue1 ?? CurrencyAmount.fromRawAmount(fiatValue0.currency, 0))
 
-  const chainUrlParam = getChainInfo(currencyInfo0?.currency.chainId || UniverseChainId.Mainnet).urlParam
+  const chainUrlParam = getChainInfo(currencyInfo0?.currency.chainId || UniverseChainId.Zanjir).urlParam
   const currency0Link = getTokenDetailsURL({
     address: currencyInfo0?.currency.isToken ? currencyInfo0?.currency.address : undefined, // util handles native addresses
     chainUrlParam,

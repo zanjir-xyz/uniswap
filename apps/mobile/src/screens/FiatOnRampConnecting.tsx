@@ -61,7 +61,7 @@ export function FiatOnRampConnectingScreen({ navigation }: Props): JSX.Element |
 
   const { externalTransactionId, dispatchAddTransaction } = useFiatOnRampTransactionCreator(
     activeAccountAddress,
-    quoteCurrency.currencyInfo?.currency.chainId ?? UniverseChainId.Mainnet,
+    quoteCurrency.currencyInfo?.currency.chainId ?? UniverseChainId.Zanjir,
     serviceProvider?.serviceProvider,
   )
 

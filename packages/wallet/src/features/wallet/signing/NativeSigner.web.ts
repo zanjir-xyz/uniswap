@@ -44,7 +44,7 @@ export class NativeSigner extends Signer implements SignsTypedData {
       this.address,
       _TypedDataEncoder.hash(domain, types, value),
       // TODO: WALL-4919: Remove hardcoded Mainnet
-      toSupportedChainId(domain.chainId) || UniverseChainId.Mainnet,
+      toSupportedChainId(domain.chainId) || UniverseChainId.Zanjir,
     )
     return signature
   }
@@ -69,7 +69,7 @@ export class NativeSigner extends Signer implements SignsTypedData {
       this.address,
       hashedTx,
       // TODO: WALL-4919: Remove hardcoded Mainnet
-      tx.chainId || UniverseChainId.Mainnet,
+      tx.chainId || UniverseChainId.Zanjir,
     )
 
     return utils.serializeTransaction(ut, signature)

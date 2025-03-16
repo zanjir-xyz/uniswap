@@ -71,7 +71,7 @@ export const createMockDerivedSwapInfo = (
   outputAmount: string,
   overrides: Partial<DerivedSwapInfo> = {},
 ): DerivedSwapInfo => ({
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Zanjir,
   currencies: {
     [CurrencyField.INPUT]: {
       currency: inputCurrency,

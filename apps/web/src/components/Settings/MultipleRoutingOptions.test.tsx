@@ -10,14 +10,14 @@ jest.mock('hooks/useAccount')
 describe('Multiple routing options', () => {
   beforeEach(() => {
     mocked(useAccount).mockReturnValue({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Zanjir,
     } as unknown as ReturnType<typeof useAccount>)
   })
 
   it('optimal routing is enabled by default', () => {
     render(
       <Provider>
-        <MultipleRoutingOptions chainId={UniverseChainId.Mainnet} />
+        <MultipleRoutingOptions chainId={UniverseChainId.Zanjir} />
       </Provider>,
     )
 
@@ -30,7 +30,7 @@ describe('Multiple routing options', () => {
   it('when optimal routing is toggled other toggles are enabled', async () => {
     render(
       <Provider>
-        <MultipleRoutingOptions chainId={UniverseChainId.Mainnet} />
+        <MultipleRoutingOptions chainId={UniverseChainId.Zanjir} />
       </Provider>,
     )
 
@@ -52,7 +52,7 @@ describe('Multiple routing options', () => {
   it('can only deselect one pool at a time', async () => {
     render(
       <Provider>
-        <MultipleRoutingOptions chainId={UniverseChainId.Mainnet} />
+        <MultipleRoutingOptions chainId={UniverseChainId.Zanjir} />
       </Provider>,
     )
 

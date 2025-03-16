@@ -41,10 +41,10 @@ export function BuyNativeTokenModal({
   }
 
   const chainName = getChainInfo(chainId).label
-  const formattedChainName = chainId === UniverseChainId.Mainnet ? '' : `(${chainName})`
+  const formattedChainName = chainId === UniverseChainId.Zanjir ? '' : `(${chainName})`
 
   const nativeTokenSymbol =
-    chainId === UniverseChainId.Mainnet
+    chainId === UniverseChainId.Zanjir
       ? nativeCurrencyInfo.currency.symbol ?? ''
       : `${chainName} ${nativeCurrencyInfo.currency.symbol ?? ''}`
 

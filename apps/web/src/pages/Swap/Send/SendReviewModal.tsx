@@ -126,7 +126,7 @@ function SendReviewModalInner({ onConfirm, onDismiss }: SendModalInnerProps) {
             header={primaryInputView}
             subheader={secondaryInputView}
             image={
-              <PortfolioLogo currencies={[inputCurrency]} size={36} chainId={chainId ?? UniverseChainId.Mainnet} />
+              <PortfolioLogo currencies={[inputCurrency]} size={36} chainId={chainId ?? UniverseChainId.Zanjir} />
             }
           />
           <SendModalHeader
@@ -151,7 +151,7 @@ function SendReviewModalInner({ onConfirm, onDismiss }: SendModalInnerProps) {
             <Trans i18nKey="common.networkCost" />
           </ThemedText.BodySmall>
           <Flex row width="min-content" gap="$gap4" alignItems="center">
-            <ChainLogo chainId={chainId ?? UniverseChainId.Mainnet} size={16} />
+            <ChainLogo chainId={chainId ?? UniverseChainId.Zanjir} size={16} />
             <ThemedText.BodySmall>{gasFeeFormatted}</ThemedText.BodySmall>
           </Flex>
         </Flex>

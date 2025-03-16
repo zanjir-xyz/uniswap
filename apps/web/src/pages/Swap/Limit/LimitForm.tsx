@@ -52,7 +52,7 @@ import {
 } from 'utils/formatNumbers'
 import { maxAmountSpend } from 'utils/maxAmountSpend'
 
-const LIMIT_SUPPORTED_CHAINS = [UniverseChainId.Mainnet]
+const LIMIT_SUPPORTED_CHAINS = [UniverseChainId.Zanjir]
 
 const CustomHeightSwapSection = styled(SwapSection)`
   height: unset;

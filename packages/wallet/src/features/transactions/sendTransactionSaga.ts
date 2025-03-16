@@ -36,7 +36,7 @@ import { hexlifyTransaction } from 'wallet/src/utils/transaction'
 
 // This timeout is used to trigger a log event if the transaction is pending for too long
 const getTransactionTimeoutMs = (chainId: UniverseChainId) => {
-  if (chainId === UniverseChainId.Mainnet) {
+  if (chainId === UniverseChainId.Zanjir) {
     return 10 * ONE_MINUTE_MS
   }
   return ONE_MINUTE_MS
@@ -287,7 +287,7 @@ export function* tryGetNonce(account: SignerMnemonicAccountMeta, chainId: Univer
     >(DynamicConfigs.MainnetPrivateRpc, MainnetPrivateRpcConfigKey.SendFlashbotsAuthenticationHeader, false)
 
     const shouldUseFlashbots =
-      isPrivateRpcEnabled && chainId === UniverseChainId.Mainnet && useFlashbots && sendAuthenticationHeader
+      isPrivateRpcEnabled && chainId === UniverseChainId.Zanjir && useFlashbots && sendAuthenticationHeader
 
     const provider = shouldUseFlashbots
       ? yield* call(getPrivateProvider, chainId, account)

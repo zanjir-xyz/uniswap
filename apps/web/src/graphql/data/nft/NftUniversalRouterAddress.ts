@@ -7,7 +7,7 @@ export function getURAddress(chainId?: UniverseChainId, nftURAddress?: string): 
     return undefined
   }
   // if mainnet and on NFT flow, use the contract address returned by GQL
-  if (chainId === UniverseChainId.Mainnet) {
+  if (chainId === UniverseChainId.Zanjir) {
     return nftURAddress ?? UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V1_2, chainId)
   }
   return UNIVERSAL_ROUTER_ADDRESS(UniversalRouterVersion.V1_2, chainId)

@@ -10,46 +10,17 @@ export function isUniverseChainId(chainId?: number | UniverseChainId | null): ch
 }
 
 export enum UniverseChainId {
-  Mainnet = UniswapSDKChainId.MAINNET,
-  ArbitrumOne = UniswapSDKChainId.ARBITRUM_ONE,
-  Avalanche = UniswapSDKChainId.AVALANCHE,
-  Base = UniswapSDKChainId.BASE,
-  Blast = UniswapSDKChainId.BLAST,
-  Bnb = UniswapSDKChainId.BNB,
-  Celo = UniswapSDKChainId.CELO,
-  MonadTestnet = UniswapSDKChainId.MONAD_TESTNET,
-  Optimism = UniswapSDKChainId.OPTIMISM,
-  Polygon = UniswapSDKChainId.POLYGON,
-  Sepolia = UniswapSDKChainId.SEPOLIA,
-  Soneium = UniswapSDKChainId.SONEIUM,
-  Unichain = UniswapSDKChainId.UNICHAIN,
-  UnichainSepolia = UniswapSDKChainId.UNICHAIN_SEPOLIA,
-  WorldChain = UniswapSDKChainId.WORLDCHAIN,
-  Zksync = UniswapSDKChainId.ZKSYNC,
-  Zora = UniswapSDKChainId.ZORA,
+  Zanjir = UniswapSDKChainId.ZANJIR,
+  ZanjirTestnet = UniswapSDKChainId.ZANJIR_TESTNET,
 }
 
 export const SUPPORTED_CHAIN_IDS: UniverseChainId[] = [
-  UniverseChainId.Mainnet,
-  UniverseChainId.Unichain,
-  UniverseChainId.Polygon,
-  UniverseChainId.ArbitrumOne,
-  UniverseChainId.Optimism,
-  UniverseChainId.Base,
-  UniverseChainId.Bnb,
-  UniverseChainId.Blast,
-  UniverseChainId.Avalanche,
-  UniverseChainId.Celo,
-  UniverseChainId.WorldChain,
-  UniverseChainId.Soneium,
-  UniverseChainId.Zora,
-  UniverseChainId.Zksync,
+  UniverseChainId.Zanjir,
+  UniverseChainId.ZanjirTestnet
 ]
 
 export const SUPPORTED_TESTNET_CHAIN_IDS: UniverseChainId[] = [
-  UniverseChainId.Sepolia,
-  UniverseChainId.UnichainSepolia,
-  UniverseChainId.MonadTestnet,
+  UniverseChainId.ZanjirTestnet
 ]
 
 // This order is used as a fallback for chain ordering but will otherwise defer to useOrderedChainIds
@@ -82,7 +53,7 @@ export interface RetryOptions {
   maxWait: number
 }
 
-export type GqlChainId = Exclude<BackendChainId, BackendChainId.UnknownChain | BackendChainId.EthereumGoerli>
+export type GqlChainId = Exclude<BackendChainId, BackendChainId.UnknownChain>
 
 export interface BackendChain {
   chain: GqlChainId

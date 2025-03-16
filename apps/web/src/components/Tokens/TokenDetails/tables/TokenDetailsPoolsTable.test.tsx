@@ -17,7 +17,7 @@ jest.mock('react-router-dom', () => ({
   useParams: jest.fn(),
 }))
 
-const mockToken = new Token(UniverseChainId.Mainnet, validBEPoolToken0.id, 18)
+const mockToken = new Token(UniverseChainId.Zanjir, validBEPoolToken0.id, 18)
 
 describe('TDPPoolTable', () => {
   beforeEach(() => {
@@ -35,7 +35,7 @@ describe('TDPPoolTable', () => {
     })
 
     const { asFragment } = render(
-      <TokenDetailsPoolsTable chainId={UniverseChainId.Mainnet} referenceToken={mockToken} />,
+      <TokenDetailsPoolsTable chainId={UniverseChainId.Zanjir} referenceToken={mockToken} />,
     )
     expect(screen.getAllByTestId('cell-loading-bubble')).not.toBeNull()
     expect(asFragment()).toMatchSnapshot()
@@ -52,7 +52,7 @@ describe('TDPPoolTable', () => {
     })
 
     const { asFragment } = render(
-      <TokenDetailsPoolsTable chainId={UniverseChainId.Mainnet} referenceToken={mockToken} />,
+      <TokenDetailsPoolsTable chainId={UniverseChainId.Zanjir} referenceToken={mockToken} />,
     )
     expect(screen.getByTestId('table-error-modal')).not.toBeNull()
     expect(asFragment()).toMatchSnapshot()
@@ -84,7 +84,7 @@ describe('TDPPoolTable', () => {
     })
 
     const { asFragment } = render(
-      <TokenDetailsPoolsTable chainId={UniverseChainId.Mainnet} referenceToken={mockToken} />,
+      <TokenDetailsPoolsTable chainId={UniverseChainId.Zanjir} referenceToken={mockToken} />,
     )
     expect(screen.getByTestId(`tdp-pools-table-${validBEPoolToken0.id}`)).not.toBeNull()
     expect(asFragment()).toMatchSnapshot()

@@ -32,7 +32,7 @@ export function useCurrencyInfo(
   const chainIdWithFallback =
     (typeof addressOrCurrency === 'string' ? chainId : addressOrCurrency?.chainId) ?? connectedChainId
   const supportedChainId = useSupportedChainId(chainIdWithFallback)
-  const nativeAddressWithFallback = getChainInfo(supportedChainId ?? UniverseChainId.Mainnet).nativeCurrency.address
+  const nativeAddressWithFallback = getChainInfo(supportedChainId ?? UniverseChainId.Zanjir).nativeCurrency.address
 
   const isNative = useMemo(() => checkIsNative(addressOrCurrency), [addressOrCurrency])
   const address = useMemo(
@@ -42,7 +42,7 @@ export function useCurrencyInfo(
 
   const addressWithFallback = isNative || !address ? nativeAddressWithFallback : address
 
-  const currencyId = buildCurrencyId(supportedChainId ?? UniverseChainId.Mainnet, addressWithFallback)
+  const currencyId = buildCurrencyId(supportedChainId ?? UniverseChainId.Zanjir, addressWithFallback)
   const currencyInfo = useUniswapCurrencyInfo(currencyId, { skip })
 
   return useMemo(() => {

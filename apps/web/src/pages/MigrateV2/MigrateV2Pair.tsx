@@ -530,7 +530,7 @@ function V2PairMigration({
           <ExternalLink
             key="migration-contract"
             href={getExplorerLink(
-              account.chainId ?? UniverseChainId.Mainnet,
+              account.chainId ?? UniverseChainId.Zanjir,
               migrator?.address ?? '',
               ExplorerDataType.ADDRESS,
             )}

@@ -18,7 +18,7 @@ export function useFetchListCallback(): (listUrl: string, skipValidation?: boole
       dispatch(fetchTokenList.pending({ requestId, url: listUrl }))
       return getTokenList(
         listUrl,
-        (ensName: string) => resolveENSContentHash(ensName, RPC_PROVIDERS[UniverseChainId.Mainnet]),
+        (ensName: string) => resolveENSContentHash(ensName, RPC_PROVIDERS[UniverseChainId.Zanjir]),
         skipValidation,
       )
         .then((tokenList) => {

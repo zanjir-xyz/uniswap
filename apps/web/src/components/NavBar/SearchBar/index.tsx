@@ -231,8 +231,8 @@ export const SearchBar = ({
           <SearchModal
             isModalOpen={isOpen}
             flow={TokenSelectorFlow.Swap}
-            chainId={UniverseChainId.Mainnet}
-            chainIds={[UniverseChainId.Mainnet]}
+            chainId={UniverseChainId.Zanjir}
+            chainIds={[UniverseChainId.Zanjir]}
             onClose={() => {
               toggleOpen()
               sendAnalyticsEvent(InterfaceEventName.NAVBAR_SEARCH_EXITED, navbarSearchEventProperties)

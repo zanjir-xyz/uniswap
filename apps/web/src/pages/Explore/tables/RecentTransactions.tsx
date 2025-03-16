@@ -45,7 +45,7 @@ const RecentTransactions = memo(function RecentTransactions() {
     TransactionType.REMOVE,
     TransactionType.ADD,
   ])
-  const chainInfo = getChainInfo(useChainIdFromUrlParam() ?? UniverseChainId.Mainnet)
+  const chainInfo = getChainInfo(useChainIdFromUrlParam() ?? UniverseChainId.Zanjir)
 
   const { transactions, loading, loadMore, errorV2, errorV3 } = useAllTransactions(chainInfo.backendChain.chain, filter)
   const combinedError =

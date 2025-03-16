@@ -123,7 +123,7 @@ describe('TokenLogo', () => {
 
     it('does not render network logo when chainId is Mainnet', () => {
       const { queryByTestId } = render(
-        <TokenLogo chainId={UniverseChainId.Mainnet} symbol="DAI" url="https://example.com" />,
+        <TokenLogo chainId={UniverseChainId.Zanjir} symbol="DAI" url="https://example.com" />,
       )
 
       const networkLogo = queryByTestId('network-logo')

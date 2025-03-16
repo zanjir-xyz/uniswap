@@ -40,8 +40,8 @@ describe('hooks', () => {
   beforeEach(() => {
     mocked(useEnabledChains).mockReturnValue({
       isTestnetModeEnabled: false,
-      defaultChainId: UniverseChainId.Mainnet,
-      chains: [UniverseChainId.Mainnet, UniverseChainId.Optimism],
+      defaultChainId: UniverseChainId.Zanjir,
+      chains: [UniverseChainId.Zanjir, UniverseChainId.Optimism],
       gqlChains: GQL_MAINNET_CHAINS,
     })
 
@@ -124,8 +124,8 @@ describe('hooks', () => {
   describe('URL parameter serialization', () => {
     test('serializeSwapStateToURLParameters handles cross-chain swaps', () => {
       const result = serializeSwapStateToURLParameters({
-        chainId: UniverseChainId.Mainnet,
-        inputCurrency: nativeOnChain(UniverseChainId.Mainnet),
+        chainId: UniverseChainId.Zanjir,
+        inputCurrency: nativeOnChain(UniverseChainId.Zanjir),
         outputCurrency: nativeOnChain(UniverseChainId.Optimism),
         typedValue: '1.0',
         independentField: CurrencyField.INPUT,
@@ -138,32 +138,32 @@ describe('hooks', () => {
 
     test('serializeSwapStateToURLParameters handles token to token swaps on same chain', () => {
       const result = serializeSwapStateToURLParameters({
-        chainId: UniverseChainId.Mainnet,
-        inputCurrency: UNI[UniverseChainId.Mainnet],
+        chainId: UniverseChainId.Zanjir,
+        inputCurrency: UNI[UniverseChainId.Zanjir],
         outputCurrency: ETH_MAINNET,
         typedValue: '100',
         independentField: CurrencyField.OUTPUT,
       })
 
       expect(result).toBe(
-        `?chain=mainnet&inputCurrency=${UNI_ADDRESSES[UniverseChainId.Mainnet]}&outputCurrency=${ETH_MAINNET.isNative ? NATIVE_CHAIN_ID : ETH_MAINNET.address}&value=100&field=${CurrencyField.OUTPUT}`,
+        `?chain=mainnet&inputCurrency=${UNI_ADDRESSES[UniverseChainId.Zanjir]}&outputCurrency=${ETH_MAINNET.isNative ? NATIVE_CHAIN_ID : ETH_MAINNET.address}&value=100&field=${CurrencyField.OUTPUT}`,
       )
     })
 
     test('serializeSwapStateToURLParameters omits value and field when no valid input', () => {
       const result = serializeSwapStateToURLParameters({
-        chainId: UniverseChainId.Mainnet,
-        inputCurrency: UNI[UniverseChainId.Mainnet],
+        chainId: UniverseChainId.Zanjir,
+        inputCurrency: UNI[UniverseChainId.Zanjir],
         typedValue: '',
         independentField: CurrencyField.INPUT,
       })
 
-      expect(result).toBe(`?chain=mainnet&inputCurrency=${UNI_ADDRESSES[UniverseChainId.Mainnet]}`)
+      expect(result).toBe(`?chain=mainnet&inputCurrency=${UNI_ADDRESSES[UniverseChainId.Zanjir]}`)
     })
 
     test('serializeSwapAddressesToURLParameters handles cross-chain swaps', () => {
       const result = serializeSwapAddressesToURLParameters({
-        chainId: UniverseChainId.Mainnet,
+        chainId: UniverseChainId.Zanjir,
         outputChainId: UniverseChainId.Optimism,
         inputTokenAddress: NATIVE_CHAIN_ID,
         outputTokenAddress: NATIVE_CHAIN_ID,
@@ -176,41 +176,41 @@ describe('hooks', () => {
 
     test('serializeSwapAddressesToURLParameters handles token to token on same chain', () => {
       const result = serializeSwapAddressesToURLParameters({
-        chainId: UniverseChainId.Mainnet,
-        inputTokenAddress: UNI_ADDRESSES[UniverseChainId.Mainnet],
+        chainId: UniverseChainId.Zanjir,
+        inputTokenAddress: UNI_ADDRESSES[UniverseChainId.Zanjir],
         outputTokenAddress: ETH_MAINNET.isNative ? NATIVE_CHAIN_ID : ETH_MAINNET.address,
       })
 
       expect(result).toBe(
-        `?chain=mainnet&inputCurrency=${UNI_ADDRESSES[UniverseChainId.Mainnet]}&outputCurrency=${ETH_MAINNET.isNative ? NATIVE_CHAIN_ID : ETH_MAINNET.address}`,
+        `?chain=mainnet&inputCurrency=${UNI_ADDRESSES[UniverseChainId.Zanjir]}&outputCurrency=${ETH_MAINNET.isNative ? NATIVE_CHAIN_ID : ETH_MAINNET.address}`,
       )
     })
 
     test('serializeSwapAddressesToURLParameters defaults to mainnet when no chainId provided', () => {
       const result = serializeSwapAddressesToURLParameters({
         inputTokenAddress: NATIVE_CHAIN_ID,
-        outputTokenAddress: UNI_ADDRESSES[UniverseChainId.Mainnet],
+        outputTokenAddress: UNI_ADDRESSES[UniverseChainId.Zanjir],
       })
 
-      expect(result).toBe(`?inputCurrency=${NATIVE_CHAIN_ID}&outputCurrency=${UNI_ADDRESSES[UniverseChainId.Mainnet]}`)
+      expect(result).toBe(`?inputCurrency=${NATIVE_CHAIN_ID}&outputCurrency=${UNI_ADDRESSES[UniverseChainId.Zanjir]}`)
     })
 
     test('serializeSwapAddressesToURLParameters handles undefined input token', () => {
       const result = serializeSwapAddressesToURLParameters({
-        chainId: UniverseChainId.Mainnet,
-        outputTokenAddress: UNI_ADDRESSES[UniverseChainId.Mainnet],
+        chainId: UniverseChainId.Zanjir,
+        outputTokenAddress: UNI_ADDRESSES[UniverseChainId.Zanjir],
       })
 
-      expect(result).toBe(`?chain=mainnet&outputCurrency=${UNI_ADDRESSES[UniverseChainId.Mainnet]}`)
+      expect(result).toBe(`?chain=mainnet&outputCurrency=${UNI_ADDRESSES[UniverseChainId.Zanjir]}`)
     })
 
     test('serializeSwapStateToURLParameters handles partial state', () => {
       const result = serializeSwapStateToURLParameters({
-        chainId: UniverseChainId.Mainnet,
-        inputCurrency: UNI[UniverseChainId.Mainnet],
+        chainId: UniverseChainId.Zanjir,
+        inputCurrency: UNI[UniverseChainId.Zanjir],
       })
 
-      expect(result).toBe(`?chain=mainnet&inputCurrency=${UNI_ADDRESSES[UniverseChainId.Mainnet]}`)
+      expect(result).toBe(`?chain=mainnet&inputCurrency=${UNI_ADDRESSES[UniverseChainId.Zanjir]}`)
     })
   })
 
@@ -365,8 +365,8 @@ describe('hooks', () => {
 
         mocked(useEnabledChains).mockReturnValue({
           isTestnetModeEnabled: false,
-          defaultChainId: UniverseChainId.Mainnet,
-          chains: [UniverseChainId.Mainnet],
+          defaultChainId: UniverseChainId.Zanjir,
+          chains: [UniverseChainId.Zanjir],
           gqlChains: GQL_MAINNET_CHAINS,
         })
 
@@ -377,7 +377,7 @@ describe('hooks', () => {
         } = renderHook(() => useInitialCurrencyState())
 
         expect(initialInputCurrency).toEqual(ETH_MAINNET)
-        expect(initialChainId).toEqual(UniverseChainId.Mainnet)
+        expect(initialChainId).toEqual(UniverseChainId.Zanjir)
       })
 
       test('input mainnet ETH, testnet mode enabled', () => {

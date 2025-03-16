@@ -67,7 +67,7 @@ export const migrations = {
     const addresses = Object.keys(oldTransactionState?.lastTxHistoryUpdate || [])
     for (const address of addresses) {
       newNotificationState.lastTxNotificationUpdate[address] = {
-        [UniverseChainId.Mainnet]: oldTransactionState.lastTxHistoryUpdate[address],
+        [UniverseChainId.Zanjir]: oldTransactionState.lastTxHistoryUpdate[address],
       }
     }
 

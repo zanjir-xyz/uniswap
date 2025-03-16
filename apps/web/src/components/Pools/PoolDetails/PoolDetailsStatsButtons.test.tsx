@@ -32,7 +32,7 @@ jest.mock('uniswap/src/features/gating/hooks', () => {
 
 describe('PoolDetailsStatsButton', () => {
   const mockProps = {
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Zanjir,
     token0: validBEPoolToken0,
     token1: validBEPoolToken1,
     feeTier: 500,

@@ -308,7 +308,7 @@ export function CreatePositionModal({ isOpen, onClose }: { isOpen: boolean; onCl
                   Value: () => (
                     <Flex row gap="$gap4" alignItems="center">
                       <NetworkLogo
-                        chainId={baseCurrency?.chainId || UniverseChainId.Mainnet}
+                        chainId={baseCurrency?.chainId || UniverseChainId.Zanjir}
                         size={iconSizes.icon16}
                         shape="square"
                       />

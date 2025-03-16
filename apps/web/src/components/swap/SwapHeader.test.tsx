@@ -20,8 +20,8 @@ function Wrapper(props: PropsWithChildren<WrapperProps>) {
         reset: jest.fn(),
         setSelectedChainId: jest.fn(),
         isMultichainContext: true,
-        initialChainId: props.chainId ?? UniverseChainId.Mainnet,
-        chainId: props.chainId ?? UniverseChainId.Mainnet,
+        initialChainId: props.chainId ?? UniverseChainId.Zanjir,
+        chainId: props.chainId ?? UniverseChainId.Zanjir,
         setIsUserSelectedToken: jest.fn(),
         isUserSelectedToken: false,
       }}

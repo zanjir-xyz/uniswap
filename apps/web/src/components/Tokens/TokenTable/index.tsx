@@ -173,7 +173,7 @@ function TokenTable({
       tokens?.map((token, i) => {
         const delta1hr = token.pricePercentChange1Hour?.value
         const delta1d = token.pricePercentChange1Day?.value
-        const currCurrencyId = buildCurrencyId(fromGraphQLChain(token.chain) ?? UniverseChainId.Mainnet, token.address)
+        const currCurrencyId = buildCurrencyId(fromGraphQLChain(token.chain) ?? UniverseChainId.Zanjir, token.address)
         const tokenSortIndex = tokenSortRank[currCurrencyId]
         const chainId = getChainIdFromChainUrlParam(token.chain.toLowerCase())
         const unwrappedToken = chainId ? unwrapToken(chainId, token) : token

@@ -50,7 +50,7 @@ export function registerSetupTests() {
 
   // Reset hardhat between suites to ensure isolation.
   // This resets the fork, as well as options like automine.
-  before(() => cy.hardhat().then((hardhat) => hardhat.reset(UniverseChainId.Mainnet)))
+  before(() => cy.hardhat().then((hardhat) => hardhat.reset(UniverseChainId.Zanjir)))
 
   // Reverts hardhat between tests to ensure isolation.
   // This reverts the fork, but not options like automine.

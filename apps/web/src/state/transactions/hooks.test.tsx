@@ -17,7 +17,7 @@ import { USDC_MAINNET } from 'uniswap/src/constants/tokens'
 import { TransactionStatus } from 'uniswap/src/data/graphql/uniswap-data-api/__generated__/types-and-hooks'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 
-const PERMIT2_ADDRESS_MAINNET = permit2Address(UniverseChainId.Mainnet)
+const PERMIT2_ADDRESS_MAINNET = permit2Address(UniverseChainId.Zanjir)
 
 const pendingTransactionResponse = {
   hash: '0x123',
@@ -28,7 +28,7 @@ const pendingTransactionResponse = {
   gasLimit: BigNumber.from(1000),
   data: '0x',
   value: BigNumber.from(0),
-  chainId: UniverseChainId.Mainnet,
+  chainId: UniverseChainId.Zanjir,
   confirmations: 0,
   blockNumber: undefined,
   blockHash: undefined,
@@ -51,13 +51,13 @@ jest.mock('hooks/useAccount')
 describe('Transactions hooks', () => {
   beforeEach(() => {
     mocked(useAccount).mockReturnValue({
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Zanjir,
       address: '0x123',
       status: 'connected',
     } as unknown as ReturnType<typeof useAccount>)
 
     jest.useFakeTimers()
-    store.dispatch(clearAllTransactions({ chainId: UniverseChainId.Mainnet }))
+    store.dispatch(clearAllTransactions({ chainId: UniverseChainId.Zanjir }))
   })
 
   function addPendingTransaction(txInfo: TransactionInfo) {
@@ -73,7 +73,7 @@ describe('Transactions hooks', () => {
     act(() => {
       store.dispatch(
         finalizeTransaction({
-          chainId: UniverseChainId.Mainnet,
+          chainId: UniverseChainId.Zanjir,
           hash: pendingTransactionResponse.hash,
           status: TransactionStatus.Confirmed,
         }),
@@ -83,7 +83,7 @@ describe('Transactions hooks', () => {
 
   it('useTransactionAdder adds a transaction', () => {
     addPendingTransaction(mockApprovalTransactionInfo)
-    expect(store.getState().localWebTransactions[UniverseChainId.Mainnet][pendingTransactionResponse.hash]).toEqual({
+    expect(store.getState().localWebTransactions[UniverseChainId.Zanjir][pendingTransactionResponse.hash]).toEqual({
       hash: pendingTransactionResponse.hash,
       info: mockApprovalTransactionInfo,
       from: pendingTransactionResponse.from,
@@ -102,7 +102,7 @@ describe('Transactions hooks', () => {
       remover.current(pendingTransactionResponse.hash)
     })
     expect(
-      store.getState().localWebTransactions[UniverseChainId.Mainnet][pendingTransactionResponse.hash],
+      store.getState().localWebTransactions[UniverseChainId.Zanjir][pendingTransactionResponse.hash],
     ).toBeUndefined()
   })
 
@@ -192,15 +192,15 @@ describe('Transactions hooks', () => {
       const { result: canceller } = renderHook(() => useTransactionCanceller())
 
       const originalTransactionDetails =
-        store.getState().localWebTransactions[UniverseChainId.Mainnet][pendingTransactionResponse.hash]
+        store.getState().localWebTransactions[UniverseChainId.Zanjir][pendingTransactionResponse.hash]
 
-      act(() => canceller.current(pendingTransactionResponse.hash, UniverseChainId.Mainnet, '0x456'))
+      act(() => canceller.current(pendingTransactionResponse.hash, UniverseChainId.Zanjir, '0x456'))
 
       expect(
-        store.getState().localWebTransactions[UniverseChainId.Mainnet][pendingTransactionResponse.hash],
+        store.getState().localWebTransactions[UniverseChainId.Zanjir][pendingTransactionResponse.hash],
       ).toBeUndefined()
 
-      expect(store.getState().localWebTransactions[UniverseChainId.Mainnet]['0x456']).toEqual({
+      expect(store.getState().localWebTransactions[UniverseChainId.Zanjir]['0x456']).toEqual({
         ...originalTransactionDetails,
         hash: '0x456',
         cancelled: true,

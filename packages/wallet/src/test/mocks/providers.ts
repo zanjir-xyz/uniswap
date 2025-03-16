@@ -57,14 +57,14 @@ export const getTxProvidersMocks = (txReceipt?: TransactionReceipt): TxProviders
 }
 
 export const contractManager = new ContractManager()
-contractManager.getOrCreateContract(UniverseChainId.Mainnet, DAI.address, provider, ERC20_ABI)
+contractManager.getOrCreateContract(UniverseChainId.Zanjir, DAI.address, provider, ERC20_ABI)
 contractManager.getOrCreateContract(
-  UniverseChainId.Mainnet,
-  getWrappedNativeAddress(UniverseChainId.Mainnet),
+  UniverseChainId.Zanjir,
+  getWrappedNativeAddress(UniverseChainId.Zanjir),
   provider,
   WETH_ABI,
 )
-export const tokenContract = contractManager.getContract(UniverseChainId.Mainnet, DAI.address) as Erc20
+export const tokenContract = contractManager.getContract(UniverseChainId.Zanjir, DAI.address) as Erc20
 
 export const mockTokenContract = {
   balanceOf: (): BigNumber => BigNumber.from('1000000000000000000'),

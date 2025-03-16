@@ -7,7 +7,7 @@ import { UniverseChainId } from 'uniswap/src/features/chains/types'
 
 describe('PortfolioLogo', () => {
   it('renders without L2 icon', () => {
-    const { container } = render(<PortfolioLogo chainId={UniverseChainId.Mainnet} currencies={[DAI, USDC_MAINNET]} />)
+    const { container } = render(<PortfolioLogo chainId={UniverseChainId.Zanjir} currencies={[DAI, USDC_MAINNET]} />)
     expect(container).toMatchSnapshot()
   })
 

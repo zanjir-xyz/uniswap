@@ -294,7 +294,7 @@ function NFTItemScreenContents({
                     collection={asset?.collection}
                     fallbackData={fallbackData}
                     loading={nftLoading}
-                    shouldDisableLink={chainId !== UniverseChainId.Mainnet} // TODO(MOB-3447): Remove once backend has full L2 collection support
+                    shouldDisableLink={chainId !== UniverseChainId.Zanjir} // TODO(MOB-3447): Remove once backend has full L2 collection support
                     onPress={onPressCollection}
                   />
                 </Flex>

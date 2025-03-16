@@ -54,7 +54,7 @@ async function getTextFetch(key: string, name: string, provider: providers.JsonR
 async function getOnChainEnsFetch(params: EnsLookupParams): Promise<string | null> {
   const { type, nameOrAddress } = params
 
-  const provider = createEthersProvider(UniverseChainId.Mainnet)
+  const provider = createEthersProvider(UniverseChainId.Zanjir)
 
   if (!provider) {
     return null
@@ -81,7 +81,7 @@ function useEnsQuery(type: EnsLookupType, nameOrAddress?: string | null) {
     queryKey: [ONCHAIN_ENS_CACHE_KEY, type, nameOrAddress],
     queryFn: nameOrAddress
       ? async (): ReturnType<typeof getOnChainEnsFetch> =>
-          await getOnChainEnsFetch({ type, nameOrAddress, chainId: UniverseChainId.Mainnet })
+          await getOnChainEnsFetch({ type, nameOrAddress, chainId: UniverseChainId.Zanjir })
       : skipToken,
     staleTime: 5 * ONE_MINUTE_MS,
   })
